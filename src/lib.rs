@@ -1,9 +1,9 @@
 use std::ops;
 
 #[derive(Copy, Clone, Debug)]
-struct Coord <T> {
-    x: T,
-    y: T,
+pub struct Coord <T> {
+    pub x: T,
+    pub y: T,
 }
 
 impl<T: ops::Add<Output = T>> ops::Add for Coord<T> {
