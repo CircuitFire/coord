@@ -6,6 +6,15 @@ pub struct Coord <T> {
     pub y: T,
 }
 
+impl<T: Copy> Coord<T> {
+    pub fn same(num: T) -> Coord<T> {
+        Coord {
+            x: num,
+            y: num,
+        }
+    }
+}
+
 impl<T: ops::Add<Output = T>> ops::Add for Coord<T> {
     type Output = Self;
 
