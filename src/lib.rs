@@ -15,6 +15,16 @@ impl<T: Copy> Coord<T> {
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        assert_eq!(Coord::same(4), Coord{x: 4, y: 4});
+    }
+}
+
 impl<T: ops::Add<Output = T>> ops::Add for Coord<T> {
     type Output = Self;
 
@@ -94,7 +104,7 @@ impl<T: ops::Div<Output = T>> ops::Div for Coord<T> {
 
 impl<T: PartialEq> PartialEq for Coord<T> {
     fn eq(&self, other: &Self) -> bool {
-        if(self.x == other.x) && (self.y == other.x) { true }
+        if(self.x == other.x) && (self.y == other.y) { true }
         else { false }
     }
 }
